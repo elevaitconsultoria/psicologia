@@ -67,14 +67,13 @@
     }
     .btn-ghost:hover { background: var(--destaque); color: #fff; }
 
-    .btn-wa-nav {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: #25d366; color: #fff;
-      text-decoration: none; padding: 9px 18px;
-      border-radius: 999px; font-weight: 700; font-size: 0.88rem;
-      transition: .2s ease; font-family: var(--font);
+    .nav-wa-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--texto-claro); text-decoration: none;
+      font-size: 0.82rem; font-weight: 500;
+      transition: .2s ease;
     }
-    .btn-wa-nav:hover { opacity: .88; }
+    .nav-wa-link:hover { color: var(--destaque); }
 
     /* ─── BOTÃO FLUTUANTE MOBILE ─────────────── */
     .wa-float {
@@ -136,21 +135,18 @@
 
     @media (max-width: 600px) {
       .nav-insta { display: none; }
-      .btn-wa-nav span { display: none; }
-      .btn-wa-nav { padding: 9px 12px; }
     }
 
     /* ─── HERO ───────────────────────────────── */
     .hero {
-      padding: 72px 0 64px;
+      padding: 80px 0 72px;
       background: var(--branco);
+      text-align: center;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 56px;
-      align-items: center;
+    .hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
     }
 
     .hero-eyebrow {
@@ -163,44 +159,22 @@
       margin-bottom: 20px;
     }
 
-    .hero h1 { color: var(--texto); margin-bottom: 16px; }
+    .hero h1 { color: var(--texto); margin-bottom: 14px; }
 
     .hero-sub {
-      font-size: 1.08rem !important;
-      max-width: 500px;
+      font-size: 1.05rem !important;
       margin-bottom: 32px;
     }
 
     .hero-ctas {
       display: flex; flex-wrap: wrap;
-      align-items: center; gap: 12px;
-      margin-bottom: 16px;
+      justify-content: center; gap: 12px;
+      margin-bottom: 14px;
     }
 
     .hero-reassure {
-      font-size: 0.84rem !important;
+      font-size: 0.83rem !important;
       color: var(--texto-claro);
-      display: flex; align-items: center; gap: 6px;
-    }
-
-    .hero-reassure::before {
-      content: "🔒";
-      font-size: 0.78rem;
-    }
-
-    /* foto hero */
-    .hero-photo-wrap {
-      border-radius: 32px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-      background: linear-gradient(160deg, var(--rosa-soft), var(--azul-soft));
-      aspect-ratio: 3/4;
-      max-height: 520px;
-    }
-
-    .hero-photo-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top center;
     }
 
     /* ─── SEÇÃO: SINAIS ──────────────────────── */
@@ -450,18 +424,11 @@
 
     /* ─── RESPONSIVE ─────────────────────────── */
     @media (max-width: 960px) {
-      .hero-grid,
       .sobre-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero { padding: 56px 0 52px; }
-
-      .hero-photo-wrap {
-        aspect-ratio: 4/3;
-        max-height: 340px;
-        order: -1;
-      }
+      .hero { padding: 60px 0 52px; }
 
       .sobre-photo {
         aspect-ratio: 4/3;
@@ -473,8 +440,8 @@
       }
 
       .abatcc-img {
-        min-height: 280px;
-        max-height: 340px;
+        min-height: 260px;
+        max-height: 320px;
       }
 
       .abatcc-content {
@@ -487,8 +454,8 @@
     }
 
     @media (max-width: 640px) {
-      h1 { font-size: 1.7rem; }
-      h2 { font-size: 1.35rem; }
+      h1 { font-size: 1.65rem; }
+      h2 { font-size: 1.32rem; }
 
       .sec-sinais,
       .sec-sobre,
@@ -497,8 +464,9 @@
 
       .sinais-grid { grid-template-columns: 1fr; }
 
-      .hero-ctas { flex-direction: column; align-items: stretch; }
-      .btn, .btn-ghost { justify-content: center; text-align: center; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn,
+      .hero-ctas .btn-ghost { width: 100%; max-width: 320px; justify-content: center; }
 
       .cta-btns { flex-direction: column; align-items: center; }
       .cta-btns .btn,
@@ -514,7 +482,7 @@
 
   <!-- ── BOTÃO FLUTUANTE WHATSAPP (mobile) ── -->
   <a class="wa-float"
-     href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Amanda%21+Quero+conversar+sobre+meu+filho."
+     href="https://wa.me/5511941740045?text=Ol%C3%A1%2C+Amanda%21+Quero+conversar+sobre+meu+filho."
      target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20" height="20">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -542,13 +510,13 @@
           @psi.amandantunes
         </a>
 
-        <a class="btn-wa-nav"
-           href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Amanda%21+Quero+conversar+sobre+meu+filho."
+        <a class="nav-wa-link"
+           href="https://wa.me/5511941740045"
            target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="16" height="16">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="15" height="15">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          <span>Falar comigo</span>
+          WhatsApp
         </a>
       </div>
 
@@ -560,45 +528,35 @@
        HERO — foto da profissional + headline
   ═════════════════════════════════════════════ -->
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="container">
+      <div class="hero-inner">
+        <span class="hero-eyebrow">Psicóloga Infantil · TCC e ABA</span>
 
-      <div>
-        <span class="hero-eyebrow">Atendimento infantil e adolescente · SP</span>
-
-        <h1>Você sente que seu filho precisa de ajuda — e não sabe por onde começar?</h1>
+        <h1>Atendimento psicológico para crianças e adolescentes</h1>
 
         <p class="hero-sub">
-          Aqui você encontra escuta especializada, com acolhimento e sem pressão.
-          Começa por uma conversa simples, quando você estiver pronta.
+          Cada criança tem o seu próprio ritmo. O primeiro passo é uma conversa.
         </p>
 
         <div class="hero-ctas">
           <a class="btn"
-             href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Amanda%21+Quero+conversar+sobre+meu+filho."
+             href="https://wa.me/5511941740045?text=Ol%C3%A1%2C+Amanda%21+Quero+conversar+sobre+meu+filho."
              target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18" height="18">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
-            Conversar sobre meu filho
+            Falar pelo WhatsApp
           </a>
 
           <a class="btn-ghost"
-             href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Amanda%21+Tenho+uma+d%C3%BAvida."
+             href="https://wa.me/5511941740045?text=Ol%C3%A1%2C+Amanda%21+Tenho+uma+d%C3%BAvida."
              target="_blank" rel="noopener">
             Tirar uma dúvida
           </a>
         </div>
 
-        <p class="hero-reassure">Conversa inicial sem compromisso · Resposta rápida</p>
+        <p class="hero-reassure">Conversa inicial sem compromisso · Presencial e online</p>
       </div>
-
-      <div class="hero-photo-wrap">
-        <img
-          src="assets/foto_perfil_psi.jpg"
-          alt="Amanda Antunes Cavalcante — Psicóloga Infantil"
-        />
-      </div>
-
     </div>
   </section>
 
@@ -610,7 +568,7 @@
     <div class="container">
       <div class="sec-title">
         <h2>Sinais que pedem atenção</h2>
-        <p>O sofrimento infantil raramente grita. Quase sempre aparece de forma silenciosa no dia a dia.</p>
+        <p>Nem sempre o sofrimento aparece de forma clara. Às vezes, é algo sutil no dia a dia.</p>
       </div>
 
       <div class="sinais-grid">
@@ -660,11 +618,11 @@
 
       <div class="sinais-cta">
         <a class="btn"
-           href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Amanda%21+Quero+entender+se+meu+filho+precisa+de+apoio."
+           href="https://wa.me/5511941740045?text=Ol%C3%A1%2C+Amanda%21+Quero+conversar+sobre+meu+filho."
            target="_blank" rel="noopener">
-          Quero entender se meu filho precisa de apoio
+          Falar pelo WhatsApp
         </a>
-        <p>Sem compromisso — só uma conversa.</p>
+        <p>Sem compromisso · Resposta rápida</p>
       </div>
     </div>
   </section>
@@ -685,11 +643,8 @@
 
       <div class="abatcc-content">
         <span class="eyebrow">TCC · ABA</span>
-        <h2>Como a terapia transforma o dia a dia do seu filho</h2>
-        <p>
-          Com abordagens baseadas em evidências, cada atendimento é planejado
-          de forma individual — respeitando o ritmo único de cada criança.
-        </p>
+        <h2>O que o acompanhamento oferece</h2>
+        <p>Abordagens baseadas em evidências, planejadas individualmente para cada criança.</p>
 
         <div class="beneficios-list">
           <div class="beneficio">
@@ -741,10 +696,9 @@
         <span class="crp-pill">CRP 06/233560</span>
 
         <p class="sobre-desc">
-          Sou psicóloga especializada em crianças e adolescentes.
-          Atendo com escuta genuína, olhar individualizado e sem pressa —
-          porque cada criança tem o seu próprio ritmo e cada família merece
-          um espaço de acolhimento real.
+          Psicóloga especializada em crianças e adolescentes.
+          Atendo com escuta genuína e olhar individualizado —
+          porque cada criança tem o seu próprio ritmo.
         </p>
 
         <div class="esp-tags">
@@ -756,12 +710,12 @@
 
         <div class="sobre-detalhe">
           <p><strong>Localização:</strong> Freguesia do Ó — Zona Norte de SP</p>
-          <p><strong>Atendimento online:</strong> Para toda São Paulo</p>
+          <p><strong>Atendimento online:</strong> Todo o Brasil</p>
           <p><strong>Formação:</strong> Graduação em Psicologia + Especialização ABA e TCC</p>
         </div>
 
         <a class="btn"
-           href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Amanda%21+Quero+saber+mais+sobre+o+atendimento."
+           href="https://wa.me/5511941740045?text=Ol%C3%A1%2C+Amanda%21+Quero+saber+mais+sobre+o+atendimento."
            target="_blank" rel="noopener">
           Falar com a Amanda
         </a>
@@ -777,30 +731,30 @@
   <section class="sec-steps">
     <div class="container">
       <div class="sec-title">
-        <h2>Começa mais simples do que você imagina</h2>
-        <p>Um caminho claro e acolhedor, desde o primeiro contato.</p>
+        <h2>Como funciona</h2>
+        <p>Do primeiro contato ao acompanhamento, cada etapa é pensada para a família.</p>
       </div>
 
       <div class="steps-grid">
         <div class="step">
           <div class="step-num">1</div>
-          <h3>Você me conta</h3>
-          <p>Me manda uma mensagem no WhatsApp. Sem formalidade — só me conta o que está sentindo.</p>
+          <h3>Primeiro contato</h3>
+          <p>Uma mensagem no WhatsApp. Sem formalidade.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <h3>Primeira conversa</h3>
-          <p>Agendamos um contato inicial para entender a situação e tirar suas dúvidas.</p>
+          <h3>Conversa inicial</h3>
+          <p>Entendemos juntos a situação e o que faz sentido para o seu filho.</p>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <h3>Avaliação com calma</h3>
-          <p>Conheço a criança no seu ritmo, envolvendo a família em todo o processo.</p>
+          <h3>Avaliação</h3>
+          <p>Conheço a criança no seu ritmo, com a família presente.</p>
         </div>
         <div class="step">
           <div class="step-num">4</div>
           <h3>Acompanhamento</h3>
-          <p>Sessões presenciais na Freguesia do Ó ou online — o que funcionar melhor pra você.</p>
+          <p>Presencial na Freguesia do Ó ou online, conforme a preferência.</p>
         </div>
       </div>
     </div>
@@ -813,15 +767,12 @@
   <section class="sec-cta">
     <div class="container">
       <div class="cta-card">
-        <h2>Dê o primeiro passo hoje</h2>
-        <p>
-          Você não precisa ter certeza. Só precisa começar.<br>
-          Uma conversa já pode mudar o rumo do seu filho.
-        </p>
+        <h2>Entre em contato</h2>
+        <p>Uma conversa simples já é suficiente para começar.</p>
 
         <div class="cta-btns">
           <a class="btn"
-             href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Amanda%21+Quero+conversar+sobre+meu+filho."
+             href="https://wa.me/5511941740045?text=Ol%C3%A1%2C+Amanda%21+Quero+conversar+sobre+meu+filho."
              target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18" height="18">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -829,7 +780,7 @@
             Conversar agora pelo WhatsApp
           </a>
           <a class="btn-ghost"
-             href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Amanda%21+Quero+agendar+uma+avalia%C3%A7%C3%A3o."
+             href="https://wa.me/5511941740045?text=Ol%C3%A1%2C+Amanda%21+Quero+agendar+uma+avalia%C3%A7%C3%A3o."
              target="_blank" rel="noopener">
             Agendar avaliação
           </a>
